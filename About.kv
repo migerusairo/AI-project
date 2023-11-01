@@ -1,0 +1,90 @@
+<ElementCard@MDCard>:
+    md_bg_color: '#EFB495'
+    padding:dp(10)
+    spacing:dp(7.5)
+    radius:dp(15)
+    ripple_behavior: True
+    image:''
+    text:""
+    subtext:''
+    orientation:'horizontal'
+    Image:
+        source:root.image
+    MDBoxLayout:
+        orientation:'vertical'
+        MDLabel:
+            halign:"center"
+            text:root.text
+            font_name: "fonts/Poppins.otf"
+        MDLabel:
+            halign:"center"
+            font_name: "fonts/PoppinsEL.otf"
+            font_size: "12"
+            text:root.subtext
+MDScreen:
+    name: "About"
+    MDFloatLayout:
+        ScrollView:
+            do_scroll_x: False
+            do_scroll_y: True
+
+            MDFloatLayout:
+                size_hint_y: .95
+
+                MDBoxLayout:
+                    pos_hint: {"center_y": .40}
+                    md_bg_color:1, 0, 0, 1
+                    radius: [20]
+                    opacity:.2
+
+                MDBoxLayout:
+                    MDLabel:
+                        text:"ABOUT  US"
+                        font_size: "25sp"
+                        font_name: "fonts/little.otf"
+                        pos_hint: {'center_y': 0.90}
+                        halign: "center"
+
+
+                MDBoxLayout:
+                    orientation : 'vertical'
+                    padding:[dp(10),dp(10),dp(10),dp(10)]
+                    spacing:dp(10)
+                    pos_hint: {"center_y": .40}
+                    size_hint_y: .90
+
+                    ElementCard:
+                        image:"assets/terence.jpg"
+                        text:"ESPARES"
+                        subtext:"Programmer"
+
+                    ElementCard:
+                        image:"assets/merjery.jpg"
+                        text:"HALASAN"
+                        subtext:"Programmer"
+
+                    ElementCard:
+                        image:"assets/erik.jpg"
+                        text:"JABANAG"
+                        subtext:"Programmer"
+
+                    ElementCard:
+                        image:"assets/miguel.jpg"
+                        text:"SILOS"
+                        subtext:"Programmer"
+
+        MDTextButton:
+            text: "Back"
+            font_name: "fonts/PoppinsEL.otf"
+            font_size: "18sp"
+            pos_hint: {"center_x": .2, "center_y": .95}
+            color: rgba(24, 34, 34, 255)
+            on_release:
+                root.manager.transition.direction = "right"
+                root.manager.current = "Profile-screen"
+        MDIconButton:
+            icon: "icons/back.png"
+            pos_hint: {'center_y': 0.95}
+            on_release:
+                root.manager.transition.direction = "right"
+                root.manager.current = "Profile-screen"

@@ -1,0 +1,92 @@
+MDScreen:
+    name:'Profile-screen'
+    MDFloatLayout:
+        MDIconButton:
+            icon: "icons/back.png"
+            pos_hint: {"center_x": .1,'center_y': 0.95}
+            on_release:
+                root.manager.transition.direction = "right"
+                root.manager.current = "Home-screen"
+
+        MDLabel:
+            text: "P R O F I L E"
+            font_name: "fonts/Poppins.otf"
+            font_size: "18sp"
+            pos_hint: {"center_x": .65, "center_y": .95}
+            color: rgba(24, 34, 34, 255)
+        Image:
+            source: "assets/TCUlogo.jpg"
+            size_hint: 0.5, 0.5
+            pos_hint: {'center_x': 0.5,'center_y': 0.75}
+
+        MDBoxLayout:
+            orientation:'vertical'
+            MDBoxLayout:
+                size_hint_y:.5
+
+                MDFloatLayout:
+
+                    MDBoxLayout:
+                        size_hint_y:.55
+                        md_bg_color:1, 0, 0, 1
+                        radius: [20,20,20,20]
+                        opacity: .2
+                        Image:
+                            source: "assets/TCUlogo.jpg"
+                            size_hint: 1, 1
+                            pos_hint: {'center_x': 0.5,'center_y': 0}
+
+                    MDLabel:
+                        text: "Student ID :"
+                        font_name: "fonts/Poppins.otf"
+                        font_size: "14sp"
+                        pos_hint: {"center_x": .65, "center_y": .47}
+                        color: rgba(0, 0, 0, 255)
+
+                    MDLabel:
+                        text: "Year & Course :"
+                        font_name: "fonts/Poppins.otf"
+                        font_size: "14sp"
+                        pos_hint: {"center_x": .65, "center_y": .42}
+                        color: rgba(0, 0, 0, 255)
+
+                    MDLabel:
+                        text: "Section :"
+                        font_name: "fonts/Poppins.otf"
+                        font_size: "14sp"
+                        pos_hint: {"center_x": .65, "center_y": .37}
+                        color: rgba(0, 0, 0, 255)
+
+
+                    Button:
+                        text: "About us"
+                        size_hint: .8, .06
+                        pos_hint: {"center_x": .5, "center_y": .13}
+                        background_color: 0, 0, 0, 0
+                        font_name: "fonts/PoppinsEL.otf"
+                        on_release:
+                            root.manager.transition.direction = "left"
+                            root.manager.current = "About"
+                        canvas.before:
+                            Color:
+                                rgb: rgba(0, 0, 0, 255)
+                            RoundedRectangle:
+                                size: self.size
+                                pos: self.pos
+                                radius: [10]
+
+                    Button:
+                        text: "Logout"
+                        size_hint: .8, .06
+                        pos_hint: {"center_x": .5, "center_y": .06}
+                        background_color: 0, 0, 0, 0
+                        font_name: "fonts/PoppinsEL.otf"
+                        on_release:
+                            app.user_logout()
+                        canvas.before:
+                            Color:
+                                rgb: rgba(255, 0, 0, 255)
+                            RoundedRectangle:
+                                size: self.size
+                                pos: self.pos
+                                radius: [10]

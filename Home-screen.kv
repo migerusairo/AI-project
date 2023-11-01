@@ -1,0 +1,40 @@
+MDScreen:
+    name: "Home-screen"
+    MDFloatLayout:
+        MDIcon:
+            icon: "assets/TCUlogo.jpg"
+            pos_hint: {'center_x': 0.1, 'center_y': 0.95}
+        Image:
+            source: "assets/TCUlogo.jpg"
+            size_hint: 0.5, 0.5
+            pos_hint: {'center_x': 0.5,'center_y': 0.75}
+        MDIconButton:
+            icon: "icons/notification.png"
+            pos_hint: {"center_x": .9,'center_y': 0.95}
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "Notification-screen"
+        MDLabel:
+            text: "H O M E"
+            font_name: "fonts/Poppins.otf"
+            font_size: "18sp"
+            pos_hint: {"center_x": .65, "center_y": .95}
+            color: rgba(24, 34, 34, 255)
+
+        MDIconButton:
+            icon: "icons/message.png"
+            pos_hint: {"center_x": .87,'center_y': 0.15}
+            theme_text_color: "Custom"
+            md_bg_color: 255/255, 200/255, 70/255, 1
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "Message-screen"
+
+        MDIconButton:
+            icon: "icons/users.png"
+            pos_hint: {"center_x": .87,'center_y': 0.07}
+            theme_text_color: "Custom"
+            md_bg_color: 255/255, 200/255, 70/255, 1
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "Profile-screen"
